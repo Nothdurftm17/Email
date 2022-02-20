@@ -31,4 +31,11 @@ def emails():
     return render_template('second.html', allEmails = Email.allEmails())
 #======================================================
 #======================================================
-
+#ROUTE PROCESSES DELETE
+@app.route('/emails/<int:id>/delete')
+def delete(id):
+    data = {
+        "id": id
+    }
+    Email.delete(data)
+    return redirect('/emails')

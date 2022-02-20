@@ -52,3 +52,14 @@ class Email:
 
         return is_valid
 #=======================================================================
+
+#=======================================================================
+#DELETE AN EMAIL
+
+    @classmethod
+    def delete(cls,data):
+        query = "DELETE FROM emails WHERE id = %(id)s"
+        clear = connectToMySQL('emails_schema').query_db(query, data)
+        return
+
+#=======================================================================

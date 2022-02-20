@@ -13,6 +13,7 @@
         <ul>
             {% for email_address in allEmails %}
             <li>{{email_address.email_address}} {{email_address.created_at}}</li>
+            <a href="/emails/{{email_address.id}}/delete">Delete</a>
             {% endfor %}
         </ul>
     </div>
